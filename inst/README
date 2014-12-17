@@ -1,0 +1,4 @@
+GNU R package clpAPI: R Interface to C API of COIN-OR Clp
+
+The package clpAPI requires a working installation of COIN-OR Clp (including
+libraries and header files).

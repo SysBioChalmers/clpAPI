@@ -1,0 +1,61 @@
+#------------------------------------------------------------------------------#
+#          map COIN-OR Clp function names to clpAPI function names             #
+#------------------------------------------------------------------------------#
+
+# COIN-OR Clp                     # clpAPI
+
+Clp_addColumns                 <- clpAPI::addColsCLP
+Clp_addRows                    <- clpAPI::addRowsCLP
+Clp_chgColumnLower             <- clpAPI::chgColLowerCLP
+Clp_chgColumnUpper             <- clpAPI::chgColUpperCLP
+Clp_chgObjCoefficients         <- clpAPI::chgObjCoefsCLP
+Clp_chgRowLower                <- clpAPI::chgRowLowerCLP
+Clp_chgRowUpper                <- clpAPI::chgRowUpperCLP
+#Clp_columnName                 <- clpAPI::colNameCLP
+Clp_copyNames                  <- clpAPI::copyNamesCLP
+Clp_deleteColumns              <- clpAPI::delColsCLP
+Clp_deleteModel                <- clpAPI::delProbCLP
+Clp_deleteRows                 <- clpAPI::delRowsCLP
+Clp_dropNames                  <- clpAPI::dropNamesCLP
+Clp_dual                       <- clpAPI::dualCLP
+Clp_dualColumnSolution         <- clpAPI::getColDualCLP
+Clp_columnLower                <- clpAPI::getColLowerCLP
+Clp_primalColumnSolution       <- clpAPI::getColPrimCLP
+Clp_columnUpper                <- clpAPI::getColUpperCLP
+Clp_getIndices                 <- clpAPI::getIndCLP
+Clp_logLevel                   <- clpAPI::getLogLevelCLP
+Clp_getElements                <- clpAPI::getNnzCLP
+Clp_numberColumns              <- clpAPI::getNumColsCLP
+Clp_getNumElements             <- clpAPI::getNumNnzCLP
+Clp_numberRows                 <- clpAPI::getNumRowsCLP
+Clp_objective                  <- clpAPI::getObjCoefsCLP
+Clp_optimizationDirection      <- clpAPI::getObjDirCLP
+Clp_objectiveValue             <- clpAPI::getObjValCLP
+Clp_dualRowSolution            <- clpAPI::getRowDualCLP
+Clp_rowLower                   <- clpAPI::getRowLowerCLP
+Clp_primalRowSolution          <- clpAPI::getRowPrimCLP
+Clp_problemName                <- clpAPI::probNameCLP
+Clp_rowUpper                   <- clpAPI::getRowUpperCLP
+Clp_scalingFlag                <- clpAPI::getScaleFlagCLP
+Clp_status                     <- clpAPI::getSolStatusCLP
+Clp_getVectorLengths           <- clpAPI::getVecLenCLP
+Clp_getVectorStarts            <- clpAPI::getVecStartCLP
+Clp_idiot                      <- clpAPI::idiotCLP
+Clp_newModel                   <- clpAPI::initProbCLP
+Clp_lengthNames                <- clpAPI::lengthNamesCLP
+Clp_loadProblem                <- clpAPI::loadProblemCLP
+Clp_primal                     <- clpAPI::primalCLP
+Clp_printModel                 <- clpAPI::printModelCLP
+Clp_readMps                    <- clpAPI::readMPSCLP
+Clp_resize                     <- clpAPI::resizeCLP
+Clp_restoreModel               <- clpAPI::restoreModelCLP
+#Clp_rowName                    <- clpAPI::rowNameCLP
+Clp_saveModel                  <- clpAPI::saveModelCLP
+Clp_scaling                    <- clpAPI::scaleModelCLP
+Clp_setLogLevel                <- clpAPI::setLogLevelCLP
+Clp_setOptimizationDirection   <- clpAPI::setObjDirCLP
+Clp_initialBarrierSolve        <- clpAPI::solveInitialBarrierCLP
+Clp_initialBarrierNoCrossSolve <- clpAPI::solveInitialBarrierNoCrossCLP
+Clp_initialSolve               <- clpAPI::solveInitialCLP
+Clp_initialDualSolve           <- clpAPI::solveInitialDualCLP
+Clp_initialPrimalSolve         <- clpAPI::solveInitialPrimalCLP

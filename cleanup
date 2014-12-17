@@ -1,0 +1,4 @@
+#! /bin/sh
+
+rm -rf autom4te.cache src/Makevars src/*.o
+exit 0

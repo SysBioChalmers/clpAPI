@@ -1,0 +1,66 @@
+GNU R package clpAPI: R Interface to C API of COIN-OR Clp
+
+
+The installation procedure for the clpAPI package needs to know where to
+find the COIN-OR Clp include directory and where to find the callable library.
+
+
+# ---------------------------------------------------------------------------- #
+# Linux and MacOS X installation
+# ---------------------------------------------------------------------------- #
+
+There are basically four different ways of installing the clpAPI package:
+
+1) Use --with-clp-<ARG>
+
+   --with-clp-include=PATH      with PATH being the include directory of
+                                COIN-OR Clp
+
+   --with-clp-lib=PATH          with PATH being the directory containing the
+                                callable library.
+
+   R CMD INSTALL --configure-args=" \
+       --with-clp-include=/path/to/include/dir \
+       --with-clp-lib=/path/to/lib/dir" clpAPI_X.X.X.tar.gz
+
+
+   When using --with-clp-<ARG>, both arguments must be given.
+
+2) Use of environment variables
+
+   PKG_CPPFLAGS                giving the PATH to the include directory of
+                               COIN-OR Clp
+   PKG_LIBS                    giving the PATH to the directory containing the
+                               callable library.
+
+3) Use --prefix
+
+   --prefix=PATH               with path being the installation directory of
+                               COIN-OR Clp. The include directory is assumed to
+                               be PATH/include and the callable library should
+                               be in PATH/lib.
+
+   If either --with-clp-<ARG> nor --prefix is given, it is checked wether
+   clp is in the PATH. If yes, PATH is used as prefix. If not,
+   /usr/local/include and /usr/local/lib are tested.
+
+3) Use pkg-config
+
+   If pkg-config is available on your system, the pkg-config information
+   of COIN-OR Clp will be used.
+
+
+# ---------------------------------------------------------------------------- #
+# Windows installation
+# ---------------------------------------------------------------------------- #
+
+For the installation on Windows systems the file Makewars.win in src/ is
+required. The file looks like this:
+
+PKG_CPPFLAGS=-g -D_R_=1 -DUSE_R=1 -I${CLP_PATH}/include/coin
+PKG_LIBS=-L${CLP_PATH}/lib/coin -lClp -lCoinUtils -lstdc++
+
+with the environment variable CLP_PATH being the installation directory
+of COIN-OR Clp. This procedure was tested successfully on 32-bit Windows XP.
+
+
