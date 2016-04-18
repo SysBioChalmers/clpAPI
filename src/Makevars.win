@@ -1,2 +1,2 @@
 PKG_CPPFLAGS=-g -D_R_=1 -DUSE_R=1 -I${CLP_PATH}/include/coin
-PKG_LIBS=-L${CLP_PATH}/lib/coin -L${CLP_PATH}/lib -lClp -lCoinUtils -lstdc++
+PKG_LIBS=-L${CLP_PATH}/lib/coin -L${CLP_PATH}/lib -lClp -lCoinUtils -lstdc++ -lz

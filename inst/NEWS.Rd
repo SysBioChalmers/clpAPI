@@ -4,6 +4,14 @@
 \title{clpAPI News}
 \encoding{UTF-8}
 
+% ---------------------------------------------------------------------------- %
+\section{Changes in version 1.2.7 2016-04-18}{
+  \itemize{
+    \item added \code{-lz} to \file{Makevars.win}
+    \item changed maintainer
+    \item added a period at the end of your Description line in your DESCRIPTION file.
+  }
+}
 
 % ---------------------------------------------------------------------------- %
 \section{Changes in version 1.2.6 2013-10-26}{
