@@ -230,7 +230,53 @@ SEXP addCols(SEXP lp, SEXP ncols,
 
     return out;
 }
+/* -------------------------------------------------------------------------- */
+/* get maximum number of iterations */
+SEXP getMaximumIterations(SEXP lp) {
 
+    SEXP out = R_NilValue;
+    int iterations = 0;
+
+    checkProb(lp);
+
+    iterations = maximumIterations(R_ExternalPtrAddr(lp));
+
+    out = Rf_ScalarInteger(iterations);
+
+    return out;
+}
+
+/* -------------------------------------------------------------------------- */
+/* get maximum number of seconds */
+SEXP getMaximumSeconds(SEXP lp) {
+
+    SEXP out = R_NilValue;
+    double seconds = 0;
+
+    checkProb(lp);
+
+    seconds = Clp_maximumSeconds(R_ExternalPtrAddr(lp));
+
+    out = Rf_ScalarReal(seconds);
+
+    return out;
+}
+
+/* -------------------------------------------------------------------------- */
+/* get if maxium iteration bound was hit*/
+SEXP getHitMaximumIterations(SEXP lp) {
+
+    SEXP out = R_NilValue;
+    int iterations = 0;
+
+    checkProb(lp);
+
+    iterations = Clp_hitMaximumIterations(R_ExternalPtrAddr(lp));
+
+    out = Rf_ScalarInteger(iterations);
+
+    return out;
+}
 
 /* -------------------------------------------------------------------------- */
 /* get number of rows */
@@ -676,6 +722,42 @@ SEXP printModel(SEXP lp, SEXP prefix) {
     return out;
 }
 
+/* -------------------------------------------------------------------------- */
+/* set number of iterations */
+SEXP setNumberIterations(SEXP lp, SEXP iterations) {
+
+    SEXP out = R_NilValue;
+
+    checkProb(lp);
+
+    Clp_setNumberIterations(R_ExternalPtrAddr(lp), Rf_asInteger(iterations));
+
+    return out;
+}
+/* -------------------------------------------------------------------------- */
+/* set maximal number of iterations */
+SEXP setMaximumIterations(SEXP lp, SEXP iterations) {
+
+    SEXP out = R_NilValue;
+
+    checkProb(lp);
+
+    Clp_setMaximumIterations(R_ExternalPtrAddr(lp), Rf_asInteger(iterations));
+
+    return out;
+}
+/* -------------------------------------------------------------------------- */
+/* set maximal duration in seconds */
+SEXP setMaximumSeconds(SEXP lp, SEXP seconds) {
+
+    SEXP out = R_NilValue;
+
+    checkProb(lp);
+
+    Clp_setMaximumSeconds(R_ExternalPtrAddr(lp), Rf_asReal(seconds));
+
+    return out;
+}
 
 /* -------------------------------------------------------------------------- */
 /* amount of print out */

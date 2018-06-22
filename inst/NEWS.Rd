@@ -3,6 +3,14 @@
 \name{NEWS}
 \title{clpAPI News}
 \encoding{UTF-8}
+% ---------------------------------------------------------------------------- %
+\section{Changes in version 1.2.8 2018-02-28}{
+  \itemize{
+    \item Added the functions \code{setNumberIterationsCLP}, \code{setMaximumIterationsCLP}, 
+    \code{setMaximumSecondsCLP}, \code{getMaximumIterationsCLP}, 
+    \code{getMaximumSecondsCLP}, and \code{getHitMaximumIterationsCLP}.
+  }
+}
 
 % ---------------------------------------------------------------------------- %
 \section{Changes in version 1.2.7 2016-04-18}{

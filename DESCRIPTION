@@ -1,8 +1,8 @@
 Package: clpAPI
 Type: Package
 Title: R Interface to C API of COIN-OR Clp
-Version: 1.2.7
-Date: 2016-04-18
+Version: 1.2.8
+Date: 2018-02-28
 Authors@R: c(person(c("C.", "Jonathan"), "Fritzemeier", role = c("cre", "ctb"), email = "clausjonathan.fritzemeier@uni-duesseldorf.de"),
                          person("Gabriel", "Gelius-Dietrich", role = c("aut"), email = "geliudie@uni-duesseldorf.de"))
 Depends: R (>= 2.6.0)
@@ -17,4 +17,4 @@ Author: C. Jonathan Fritzemeier [cre, ctb], Gabriel Gelius-Dietrich [aut]
 Maintainer: C. Jonathan Fritzemeier <clausjonathan.fritzemeier@uni-duesseldorf.de>
 NeedsCompilation: yes
 Repository: CRAN
-Date/Publication: 2016-04-18 09:33:15
+Date/Publication: 2018-02-28 09:33:15

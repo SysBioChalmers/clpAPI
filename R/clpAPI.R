@@ -368,10 +368,38 @@ loadMatrixCLP <- function(lp, ncols, nrows, ia, ja, ra) {
     )
 
 }
+#------------------------------------------------------------------------------#
 
+getMaximumIterationsCLP <- function(lp) {
+
+    nnz <- .Call("getMaximumIterations", PACKAGE = "clpAPI",
+                 clpPointer(lp)
+                )
+    return(nnz)
+
+}
 
 #------------------------------------------------------------------------------#
 
+getMaximumSecondsCLP <- function(lp) {
+
+    nnz <- .Call("getMaximumSeconds", PACKAGE = "clpAPI",
+                 clpPointer(lp)
+                )
+    return(nnz)
+
+}
+#------------------------------------------------------------------------------#
+
+getHitMaximumIterationsCLP <- function(lp) {
+
+    nnz <- .Call("getHitMaximumIterations", PACKAGE = "clpAPI",
+                 clpPointer(lp)
+                )
+    return(nnz)
+
+}
+#------------------------------------------------------------------------------#
 getNumNnzCLP <- function(lp) {
 
     nnz <- .Call("getNumNnz", PACKAGE = "clpAPI",
@@ -442,10 +470,45 @@ printModelCLP <- function(lp, prefix = "CLPmodel") {
     )
 
 }
+#------------------------------------------------------------------------------#
 
+setNumberIterationsCLP <- function(lp, iterations) {
+
+    invisible(
+        .Call("setNumberIterations", PACKAGE = "clpAPI",
+              clpPointer(lp),
+              as.integer(iterations)
+        )
+    )
+
+}
 
 #------------------------------------------------------------------------------#
 
+setMaximumIterationsCLP <- function(lp, iterations) {
+
+    invisible(
+        .Call("setMaximumIterations", PACKAGE = "clpAPI",
+              clpPointer(lp),
+              as.integer(iterations)
+        )
+    )
+
+}
+
+#------------------------------------------------------------------------------#
+
+setMaximumSecondsCLP <- function(lp, seconds) {
+
+    invisible(
+        .Call("setMaximumSeconds", PACKAGE = "clpAPI",
+              clpPointer(lp),
+              as.numeric(seconds)
+        )
+    )
+
+}
+#------------------------------------------------------------------------------#
 setLogLevelCLP <- function(lp, amount) {
 
     invisible(

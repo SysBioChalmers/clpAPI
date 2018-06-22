@@ -67,6 +67,15 @@ SEXP addRows(SEXP lp, SEXP nrows,
 SEXP addCols(SEXP lp, SEXP ncols,
              SEXP lb, SEXP ub, SEXP obj, SEXP colst, SEXP rows, SEXP val);
 
+/* get maximum number of iterations */
+SEXP getMaximumIterations(SEXP lp);
+
+/* get maximum number of seconds */
+SEXP getMaximumSeconds(SEXP lp);
+
+/* get if maxium iteration bound was hit*/
+SEXP getHitMaximumIterations(SEXP lp);
+
 /* get number of rows */
 SEXP getNumRows(SEXP lp);
 
@@ -128,6 +137,15 @@ SEXP getNnz(SEXP lp);
 
 /* print model */
 SEXP printModel(SEXP lp, SEXP prefix);
+
+/* set number of iterations */
+SEXP setNumberIterations(SEXP lp, SEXP iterations);
+
+/* set maximal number of iterations */
+SEXP setMaximumIterations(SEXP lp, SEXP iterations);
+
+/* set maximal duration in seconds */
+SEXP setMaximumSeconds(SEXP lp, SEXP seconds);
 
 /* amount of print out */
 SEXP setLogLevel(SEXP lp, SEXP amount);
