@@ -1,19 +1,19 @@
-\name{getColDualCLP}
-\alias{getColDualCLP}
-\alias{Clp_dualColumnSolution}
+\name{getMaximumSecondsCLP}
+\alias{getMaximumSecondsCLP}
+\alias{Clp_maximumSeconds}
 
 \title{
-  Retrieve all Column Dual Values
+  Maximum Time in Seconds (from when Set called)
 }
 
 \description{
   Low level interface function to the COIN-OR Clp function
-  \code{Clp_dualColumnSolution}. Consult the COIN-OR Clp
+  \code{Clp_maximumSeconds}. Consult the COIN-OR Clp
   documentation for more detailed information.
 }
 
 \usage{
-  getColDualCLP(lp)
+  getMaximumSecondsCLP(lp)
 }
 
 \arguments{
@@ -25,13 +25,12 @@
 }
 
 \details{
-  Interface to the C function \code{getColDual} which calls
-  the COIN-OR Clp functions \code{Clp_numberColumns} and
-  \code{Clp_dualColumnSolution}.
+  Interface to the C function \code{getMaximumSeconds} which calls
+  the COIN-OR Clp function \code{Clp_maximumSeconds}.
 }
 
 \value{
-  Returns all dual values of the stuctural variables as a numeric vector.
+  Maximum time in seconds (from when set called)
 }
 
 \references{
@@ -40,7 +39,7 @@
 }
 
 \author{
-  Gabriel Gelius-Dietrich <geliudie@uni-duesseldorf.de>
+  C. Jonathan Fritzemeier <clausjonathan.fritzemeier@uni-duesseldorf.de>
 
   Maintainer: Mayo Roettger <mayo.roettger@hhu.de>
 }

@@ -36,13 +36,13 @@
 
 \references{
    The COIN-OR Clp home page at
-   \url{http://www.coin-or.org/projects/Clp.xml}
+   \url{https://projects.coin-or.org/Clp}
 }
 
 \author{
   Gabriel Gelius-Dietrich <geliudie@uni-duesseldorf.de>
 
-  Maintainer: Claus Jonathan Fritzemeier <clausjonathan.fritzemeier@uni-duesseldorf.de>
+  Maintainer: Mayo Roettger <mayo.roettger@hhu.de>
 }
 
 

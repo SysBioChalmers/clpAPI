@@ -1,19 +1,19 @@
-\name{getColDualCLP}
-\alias{getColDualCLP}
-\alias{Clp_dualColumnSolution}
+\name{setNumberIterationsCLP}
+\alias{setNumberIterationsCLP}
+\alias{Clp_setNumberIterations}
 
 \title{
-  Retrieve all Column Dual Values
+  Set the Number of Iterations
 }
 
 \description{
   Low level interface function to the COIN-OR Clp function
-  \code{Clp_dualColumnSolution}. Consult the COIN-OR Clp
+  \code{Clp_setNumberIterations}. Consult the COIN-OR Clp
   documentation for more detailed information.
 }
 
 \usage{
-  getColDualCLP(lp)
+  setNumberIterationsCLP(lp, iterations)
 }
 
 \arguments{
@@ -22,16 +22,18 @@
     \code{\link{initProbCLP}}. This is basically a pointer to a COIN-OR Clp
     problem object.
   }
+  \item{iterations}{
+    Number of iterations
+  }
 }
 
 \details{
-  Interface to the C function \code{getColDual} which calls
-  the COIN-OR Clp functions \code{Clp_numberColumns} and
-  \code{Clp_dualColumnSolution}.
+  Interface to the C function \code{setNumberIterations} which calls
+  the COIN-OR Clp function \code{Clp_setNumberIterations}.
 }
 
 \value{
-  Returns all dual values of the stuctural variables as a numeric vector.
+  NULL
 }
 
 \references{
@@ -40,7 +42,7 @@
 }
 
 \author{
-  Gabriel Gelius-Dietrich <geliudie@uni-duesseldorf.de>
+  C. Jonathan Fritzemeier <clausjonathan.fritzemeier@uni-duesseldorf.de>
 
   Maintainer: Mayo Roettger <mayo.roettger@hhu.de>
 }

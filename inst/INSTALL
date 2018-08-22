@@ -28,10 +28,9 @@ There are basically four different ways of installing the clpAPI package:
 
 2) Use of environment variables
 
-   PKG_CPPFLAGS                giving the PATH to the include directory of
-                               COIN-OR Clp
-   PKG_LIBS                    giving the PATH to the directory containing the
-                               callable library.
+   PKG_CPPFLAGS                C preprocessor flags -I...
+
+   PKG_LIBS                    libraries -l... -L...
 
 3) Use --prefix
 
@@ -47,7 +46,8 @@ There are basically four different ways of installing the clpAPI package:
 3) Use pkg-config
 
    If pkg-config is available on your system, the pkg-config information
-   of COIN-OR Clp will be used.
+   of COIN-OR Clp will be used and --with-clp-<ARG> options (way 3) will be
+   ignored.
 
 
 # ---------------------------------------------------------------------------- #

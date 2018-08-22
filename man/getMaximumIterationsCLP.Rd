@@ -1,19 +1,19 @@
-\name{delProbCLP}
-\alias{delProbCLP}
-\alias{Clp_deleteModel}
+\name{getMaximumIterationsCLP}
+\alias{getMaximumIterationsCLP}
+\alias{maximumIterations}
 
 \title{
-  Delete Problem Object
+  Returns Maximum Number of Iterations
 }
 
 \description{
   Low level interface function to the COIN-OR Clp function
-  \code{Clp_deleteModel}. Consult the COIN-OR Clp documentation
-  for more detailed information.
+  \code{maximumIterations}. Consult the COIN-OR Clp
+  documentation for more detailed information.
 }
 
 \usage{
-  delProbCLP(lp)
+  getMaximumIterationsCLP(lp)
 }
 
 \arguments{
@@ -25,12 +25,12 @@
 }
 
 \details{
-  Interface to the C function \code{delProb} which calls
-  the COIN-OR Clp function \code{Clp_deleteModel}.
+  Interface to the C function \code{getMaximumIterations} which calls
+  the COIN-OR Clp function \code{maximumIterations}.
 }
 
 \value{
-  NULL
+  Maximum number of iterations
 }
 
 \references{
@@ -39,7 +39,7 @@
 }
 
 \author{
-  Gabriel Gelius-Dietrich <geliudie@uni-duesseldorf.de>
+  C. Jonathan Fritzemeier <clausjonathan.fritzemeier@uni-duesseldorf.de>
 
   Maintainer: Mayo Roettger <mayo.roettger@hhu.de>
 }

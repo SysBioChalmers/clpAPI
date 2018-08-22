@@ -1,19 +1,19 @@
-\name{getColDualCLP}
-\alias{getColDualCLP}
-\alias{Clp_dualColumnSolution}
+\name{getHitMaximumIterationsCLP}
+\alias{getHitMaximumIterationsCLP}
+\alias{Clp_hitMaximumIterations}
 
 \title{
-  Retrieve all Column Dual Values
+  Returns True if Hit Maximum Iterations (or Time)
 }
 
 \description{
   Low level interface function to the COIN-OR Clp function
-  \code{Clp_dualColumnSolution}. Consult the COIN-OR Clp
+  \code{Clp_hitMaximumIterations}. Consult the COIN-OR Clp
   documentation for more detailed information.
 }
 
 \usage{
-  getColDualCLP(lp)
+  getHitMaximumIterationsCLP(lp)
 }
 
 \arguments{
@@ -25,13 +25,12 @@
 }
 
 \details{
-  Interface to the C function \code{getColDual} which calls
-  the COIN-OR Clp functions \code{Clp_numberColumns} and
-  \code{Clp_dualColumnSolution}.
+  Interface to the C function \code{getHitMaximumIterations} which calls
+  the COIN-OR Clp function \code{Clp_hitMaximumIterations}.
 }
 
 \value{
-  Returns all dual values of the stuctural variables as a numeric vector.
+  True if hit maximum iterations (or time) 
 }
 
 \references{
@@ -40,7 +39,7 @@
 }
 
 \author{
-  Gabriel Gelius-Dietrich <geliudie@uni-duesseldorf.de>
+  C. Jonathan Fritzemeier <clausjonathan.fritzemeier@uni-duesseldorf.de>
 
   Maintainer: Mayo Roettger <mayo.roettger@hhu.de>
 }

@@ -263,18 +263,18 @@ SEXP getMaximumSeconds(SEXP lp) {
 }
 
 /* -------------------------------------------------------------------------- */
-/* get if maxium iteration bound was hit*/
+/* get if maximum iteration bound was hit*/
 SEXP getHitMaximumIterations(SEXP lp) {
 
     SEXP out = R_NilValue;
-    int iterations = 0;
 
     checkProb(lp);
 
-    iterations = Clp_hitMaximumIterations(R_ExternalPtrAddr(lp));
-
-    out = Rf_ScalarInteger(iterations);
-
+    if (Clp_hitMaximumIterations(R_ExternalPtrAddr(lp)))
+        out = Rf_ScalarLogical(1);
+    else
+        out = Rf_ScalarLogical(0);
+ 
     return out;
 }
 

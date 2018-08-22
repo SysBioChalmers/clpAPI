@@ -4,6 +4,18 @@
 \title{clpAPI News}
 \encoding{UTF-8}
 % ---------------------------------------------------------------------------- %
+\section{Changes in version 1.2.9 2018-08-22}{
+  \itemize{
+    \item changed maintainer
+    \item changed return value of C function \code{getHitMaximumIterations}
+    called by \code{getHitMaximumIterationsCLP} to Rf_ScalarLogical
+    \item added .Rd files for the functions \code{setNumberIterationsCLP}, \code{setMaximumIterationsCLP}, 
+    \code{setMaximumSecondsCLP}, \code{getMaximumIterationsCLP}, 
+    \code{getMaximumSecondsCLP}, and \code{getHitMaximumIterationsCLP}.
+  }
+}
+
+% ---------------------------------------------------------------------------- %
 \section{Changes in version 1.2.8 2018-02-28}{
   \itemize{
     \item Added the functions \code{setNumberIterationsCLP}, \code{setMaximumIterationsCLP}, 
