@@ -4,7 +4,7 @@
 \title{clpAPI News}
 \encoding{UTF-8}
 % ---------------------------------------------------------------------------- %
-\section{Changes in version 1.2.9 2018-08-22}{
+\section{Changes in version 1.2.9 2018-09-24}{
   \itemize{
     \item changed maintainer
     \item changed return value of C function \code{getHitMaximumIterations}
