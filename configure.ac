@@ -1,4 +1,4 @@
-AC_INIT([clpAPI], [1.2.6], [geliudie@uni-duesseldorf.de])
+AC_INIT([clpAPI], [1.2.10], [mayo.roettger@hhu.de])
 
 dnl # --------------------------------------------------------------------
 dnl # global (environment) variables
@@ -236,11 +236,17 @@ LIBS="${PKG_LIBS}"
 CFLAGS="${CFLAGS} ${PKG_CFLAGS}"
 CPPFLAGS="${CPPFLAGS} ${PKG_CPPFLAGS}"
 
+AC_CHECK_HEADERS([stdbool.h],,
+    AC_MSG_ERROR([Could not find stdbool.h]))
+
 AC_CHECK_HEADER([Clp_C_Interface.h],,
     AC_MSG_ERROR([Could not find Clp_C_Interface.h:
       clpAPI requires clp from http://www.coin-or.org/projects/Clp.xml
-      use --with-clp-include or CLP_INCLUDE to specify the include path.]))
-
+      use --with-clp-include or CLP_INCLUDE to specify the include path.]),
+      [#ifdef HAVE_STDBOOL_H
+      # include <stdbool.h>
+      #endif
+      ])
 
 AC_SEARCH_LIBS([Clp_newModel], [Clp], ,
     AC_MSG_ERROR([Could not link to clp:

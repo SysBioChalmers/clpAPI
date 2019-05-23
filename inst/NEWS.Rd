@@ -4,6 +4,14 @@
 \title{clpAPI News}
 \encoding{UTF-8}
 % ---------------------------------------------------------------------------- %
+\section{Changes in version 1.2.10 2019-05-23}{
+  \itemize{
+    \item changed configure script to build with Clp version 1.17.2, 
+    now requiring stdbool.h.
+  }
+}
+
+% ---------------------------------------------------------------------------- %
 \section{Changes in version 1.2.9 2018-09-24}{
   \itemize{
     \item changed maintainer
