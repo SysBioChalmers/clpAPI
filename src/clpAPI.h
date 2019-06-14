@@ -237,3 +237,19 @@ SEXP colName(SEXP lp, SEXP j, SEXP cname);
 /* fill in problem name */
 SEXP probName(SEXP lp, SEXP nc, SEXP pname);
 
+
+
+/* ------------------------------------------------ */
+/* NEW in Clp-1.17.2 */
+/* set row name */
+SEXP setRowName(SEXP lp, SEXP i, SEXP rname);
+
+/* set column name */
+SEXP setColName(SEXP lp, SEXP j, SEXP cname);
+
+/* Write an mps file to the given filename */
+SEXP writeMps(SEXP lp, SEXP filename, SEXP formatType, SEXP numberAcross, SEXP objSense);
+
+/* Change matrix coefficients */
+SEXP modifyCoefficient(SEXP lp, SEXP row, SEXP column, SEXP newElement, SEXP keepZero);
+/* ------------------------------------------------ */

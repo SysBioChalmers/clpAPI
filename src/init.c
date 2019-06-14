@@ -96,6 +96,12 @@ static const R_CallMethodDef callMethods[] = {
     {"getMaximumIterations",       (DL_FUNC) &getMaximumIterations,       1},
     {"getMaximumSeconds",          (DL_FUNC) &getMaximumSeconds,          1},
     {"getHitMaximumIterations",    (DL_FUNC) &getHitMaximumIterations,    1},
+    
+    {"setRowName",                 (DL_FUNC) &setRowName,                 3},
+    {"setColName",                 (DL_FUNC) &setColName,                 3},
+    {"writeMps",                   (DL_FUNC) &writeMps,                   5},
+    {"modifyCoefficient",          (DL_FUNC) &modifyCoefficient,          5},
+    
     {NULL, NULL, 0}
 };
 

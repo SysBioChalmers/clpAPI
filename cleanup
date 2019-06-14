@@ -1,5 +1,6 @@
 #! /bin/sh
 
-rm -rf autom4te.cache src/Makevars src/*.o
+rm -rf autom4te.cache src/Makevars src/*.o src/*.so
 rm -rf .DS_Store
+rm -rf src/.DS_Store
 exit 0

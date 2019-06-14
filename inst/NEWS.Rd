@@ -4,6 +4,16 @@
 \title{clpAPI News}
 \encoding{UTF-8}
 % ---------------------------------------------------------------------------- %
+\section{Changes in version 1.2.11 2019-06-14}{
+  \itemize{
+    \item Added functions \code{setRowNameCLP}, \code{setColNameCLP},
+    \code{writeMPSCLP} and \code{modifyCoefficientCLP} and
+    corresponding .Rd files. These functions are only available
+    with COIN-OR Clp version >= 1.17.2.
+  }
+}
+
+% ---------------------------------------------------------------------------- %
 \section{Changes in version 1.2.10 2019-05-23}{
   \itemize{
     \item changed configure script to build with Clp version 1.17.2, 

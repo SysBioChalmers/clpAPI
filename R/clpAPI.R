@@ -891,3 +891,72 @@ probNameCLP <- function(lp, pname) {
     )
 
 }
+
+
+# New in Clp-1.17.2 #
+#------------------------------------------------------------------------------#
+
+setRowNameCLP <- function(lp, i, rname) {
+
+    invisible(
+        .Call("setRowName", PACKAGE = "clpAPI",
+              clpPointer(lp),
+              as.integer(i),
+              as.character(rname)
+        )
+    )
+
+}
+
+
+# NEW in Clp-1.17.2 #
+#------------------------------------------------------------------------------#
+
+setColNameCLP <- function(lp, j, cname) {
+
+    invisible(
+        .Call("setColName", PACKAGE = "clpAPI",
+              clpPointer(lp),
+              as.integer(j),
+              as.character(cname)
+        )
+    )
+
+}
+
+
+# NEW in Clp-1.17.2 #
+#------------------------------------------------------------------------------#
+
+writeMPSCLP <- function(lp, fname, formatType = 0, numberAcross = 1, objSense = 1) {
+
+    check <- .Call("writeMps", PACKAGE = "clpAPI",
+                   clpPointer(lp),
+                   as.character(fname),
+                   as.integer(formatType),
+                   as.integer(numberAcross),
+                   as.numeric(objSense)
+    )
+        
+    return(check)
+
+}
+
+
+# NEW in Clp-1.17.2 #
+#------------------------------------------------------------------------------#
+
+modifyCoefficientCLP <- function(lp, i, j, el, keepZero = TRUE) {
+
+    invisible(
+        .Call("modifyCoefficient", PACKAGE = "clpAPI",
+              clpPointer(lp),
+              as.integer(i),
+              as.integer(j),
+              as.numeric(el),
+              as.logical(keepZero)
+        )
+    )
+
+}
+

@@ -59,3 +59,9 @@ Clp_initialBarrierNoCrossSolve <- clpAPI::solveInitialBarrierNoCrossCLP
 Clp_initialSolve               <- clpAPI::solveInitialCLP
 Clp_initialDualSolve           <- clpAPI::solveInitialDualCLP
 Clp_initialPrimalSolve         <- clpAPI::solveInitialPrimalCLP
+
+Clp_setRowName                 <- clpAPI::setRowNameCLP
+Clp_setColName                 <- clpAPI::setColNameCLP
+Clp_writeMps                   <- clpAPI::writeMPSCLP
+Clp_modifyCoefficient          <- clpAPI::modifyCoefficientCLP
+

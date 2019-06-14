@@ -25,6 +25,9 @@
 
 #include "clpAPI.h"
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif /* HAVE_CONFIG_H */
 
 static SEXP tagCLPprob;
 
@@ -196,7 +199,8 @@ SEXP addRows(SEXP lp, SEXP nrows,
 
     const double *rlb  = REAL(lb);
     const double *rub  = REAL(ub);
-    const int *rrowst  = INTEGER(rowst);
+    /* const int *rrowst  = INTEGER(rowst); */
+    const CoinBigIndex *rrowst  = INTEGER(rowst);
     const int *rcols   = INTEGER(cols);
     const double *rval = REAL(val);
 
@@ -219,7 +223,8 @@ SEXP addCols(SEXP lp, SEXP ncols,
     const double *rlb  = REAL(lb);
     const double *rub  = REAL(ub);
     const double *robj = REAL(obj);
-    const int *rcolst  = INTEGER(colst);
+    /* const int *rcolst  = INTEGER(colst); */
+    const CoinBigIndex *rcolst  = INTEGER(colst);
     const int *rrows   = INTEGER(rows);
     const double *rval = REAL(val);
 
@@ -597,7 +602,7 @@ SEXP loadMatrix(SEXP lp, SEXP ncols, SEXP nrows, SEXP ia, SEXP ja, SEXP ra) {
 SEXP getNumNnz(SEXP lp) {
 
     SEXP out = R_NilValue;
-    int nnz;
+    CoinBigIndex nnz;
 
     checkProb(lp);
 
@@ -1294,3 +1299,98 @@ SEXP probName(SEXP lp, SEXP nc, SEXP pname) {
 
     return out;
 }
+
+
+
+#ifdef HAVE_CLP_EXT1_17_2
+
+/* NEW in Clp-1.17.2 */
+/* -------------------------------------------------------------------------- */
+/* fill in row name */
+SEXP setRowName(SEXP lp, SEXP i, SEXP rname) {
+
+    SEXP out = R_NilValue;
+
+    const char *rrname = CHAR(STRING_ELT(rname, 0));
+
+    checkProb(lp);
+
+    Clp_setRowName(R_ExternalPtrAddr(lp), Rf_asInteger(i), (char *) rrname);
+
+    return out;
+}
+
+
+/* NEW in Clp-1.17.2 */
+/* -------------------------------------------------------------------------- */
+/* fill in column name */
+SEXP setColName(SEXP lp, SEXP j, SEXP cname) {
+
+    SEXP out = R_NilValue;
+
+    const char *rcname = CHAR(STRING_ELT(cname, 0));
+
+    checkProb(lp);
+
+    Clp_setColumnName(R_ExternalPtrAddr(lp), Rf_asInteger(j), (char *) rcname);
+
+    return out;
+}
+
+
+/* NEW in Clp-1.17.2 */
+/* -------------------------------------------------------------------------- */
+/* Write an mps file to the given filename */
+SEXP writeMps(SEXP lp, SEXP filename, SEXP formatType, SEXP numberAcross, SEXP objSense) {
+    
+    int check = 0;
+    
+    const char *rfilename = CHAR(STRING_ELT(filename, 0));
+    
+    checkProb(lp);
+    
+    check = Clp_writeMps(R_ExternalPtrAddr(lp), rfilename, Rf_asInteger(formatType), Rf_asInteger(numberAcross), Rf_asReal(objSense));
+    
+    return Rf_ScalarInteger(check);
+}
+
+
+/* NEW in Clp-1.17.2 */
+/* -------------------------------------------------------------------------- */
+/* Change matrix coefficients */
+SEXP modifyCoefficient(SEXP lp, SEXP row, SEXP column, SEXP newElement, SEXP keepZero) {
+    
+    SEXP out = R_NilValue;
+    
+    bool rkeepZero = Rf_asLogical(keepZero);
+    
+    checkProb(lp);
+    
+    Clp_modifyCoefficient(R_ExternalPtrAddr(lp), Rf_asInteger(row), Rf_asInteger(column), Rf_asReal(newElement), rkeepZero);
+    
+    return out;
+}
+
+#else /* not CLP_EXT1_17_2 */
+
+SEXP setRowName(SEXP lp, SEXP i, SEXP rname) {
+    SEXP out = R_NilValue;
+    return out;
+}
+
+SEXP setColName(SEXP lp, SEXP j, SEXP cname) {
+    SEXP out = R_NilValue;
+    return out;
+}
+
+SEXP writeMps(SEXP lp, SEXP filename, SEXP formatType, SEXP numberAcross, SEXP objSense) {
+    SEXP out = R_NilValue;
+    return out;
+}
+
+SEXP modifyCoefficient(SEXP lp, SEXP row, SEXP column, SEXP newElement, SEXP keepZero) {
+    SEXP out = R_NilValue;
+    return out;
+}
+
+#endif /* HAVE_CLP_EXT1_17_2 */

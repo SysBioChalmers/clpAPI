@@ -76,6 +76,10 @@ solveInitialCLP,
 solveInitialDualCLP,
 solveInitialPrimalCLP,
 status_codeCLP,
-versionCLP
+versionCLP,
+setRowNameCLP,
+setColNameCLP,
+writeMPSCLP,
+modifyCoefficientCLP
 )
 

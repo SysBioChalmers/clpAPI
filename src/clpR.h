@@ -25,10 +25,19 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+
+/* include config.h definitions */
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif /* HAVE_CONFIG_H */
+
+/* include stdbool.h */
+#ifdef HAVE_STDBOOL_H 
 #include <stdbool.h>
+#endif /* HAVE_STDBOOL_H */
+
 #include <Clp_C_Interface.h>
 #include <ClpConfig.h>
-
 
 /* avoid remapping of Rf_<function> to <function> in R header files */
 #ifndef R_NO_REMAP
