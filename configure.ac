@@ -1,4 +1,4 @@
-AC_INIT([clpAPI], [1.2.11], [mayo.roettger@hhu.de])
+AC_INIT([clpAPI], [1.2.13], [mayo.roettger@hhu.de])
 
 dnl # --------------------------------------------------------------------
 dnl # template config.h.in
@@ -29,7 +29,6 @@ fi
 
 dnl # GNU R default settings
 CC=`"${R_HOME}/bin/R" CMD config CC`
-#CPP=`"${R_HOME}/bin/R" CMD config CPP`
 CFLAGS=`"${R_HOME}/bin/R" CMD config CFLAGS`
 CPPFLAGS=`"${R_HOME}/bin/R" CMD config CPPFLAGS`
 AC_PROG_CC

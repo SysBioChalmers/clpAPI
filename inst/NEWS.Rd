@@ -4,7 +4,7 @@
 \title{clpAPI News}
 \encoding{UTF-8}
 % ---------------------------------------------------------------------------- %
-\section{Changes in version 1.2.12 2020-02-13}{
+\section{Changes in version 1.2.13 2020-02-13}{
   \itemize{
     \item Quick fix for CRAN issue: 'config' variable 'CPP' is deprecated.
   }
