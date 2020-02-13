@@ -4,6 +4,13 @@
 \title{clpAPI News}
 \encoding{UTF-8}
 % ---------------------------------------------------------------------------- %
+\section{Changes in version 1.2.12 2020-02-13}{
+  \itemize{
+    \item Quick fix for CRAN issue: 'config' variable 'CPP' is deprecated.
+  }
+}
+
+% ---------------------------------------------------------------------------- %
 \section{Changes in version 1.2.11 2019-06-14}{
   \itemize{
     \item Added functions \code{setRowNameCLP}, \code{setColNameCLP},
