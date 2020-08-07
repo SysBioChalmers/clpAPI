@@ -253,3 +253,6 @@ SEXP writeMps(SEXP lp, SEXP filename, SEXP formatType, SEXP numberAcross, SEXP o
 /* Change matrix coefficients */
 SEXP modifyCoefficient(SEXP lp, SEXP row, SEXP column, SEXP newElement, SEXP keepZero);
 /* ------------------------------------------------ */
+
+/* check for functionality of new clp functions */
+SEXP isAvailableFunc(SEXP funcname);

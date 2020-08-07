@@ -80,6 +80,7 @@ versionCLP,
 setRowNameCLP,
 setColNameCLP,
 writeMPSCLP,
-modifyCoefficientCLP
+modifyCoefficientCLP,
+isAvailableFuncCLP
 )
 

@@ -4,6 +4,14 @@
 \title{clpAPI News}
 \encoding{UTF-8}
 % ---------------------------------------------------------------------------- %
+\section{Changes in version 1.3.0 2020-08-07}{
+  \itemize{
+    \item Added function \code{isAvailableFuncCLP}, to check if newer API 
+    functions are available.
+  }
+}
+
+% ---------------------------------------------------------------------------- %
 \section{Changes in version 1.2.13 2020-02-13}{
   \itemize{
     \item Quick fix for CRAN issue: 'config' variable 'CPP' is deprecated.

@@ -1,4 +1,4 @@
-AC_INIT([clpAPI], [1.2.13], [mayo.roettger@hhu.de])
+AC_INIT([clpAPI], [1.3.0], [mayo.roettger@hhu.de])
 
 dnl # --------------------------------------------------------------------
 dnl # template config.h.in

@@ -1371,25 +1371,70 @@ SEXP modifyCoefficient(SEXP lp, SEXP row, SEXP column, SEXP newElement, SEXP kee
     return out;
 }
 
+/* -------------------------------------------------------------------------- */
+/* check for functionality of new clp functions */
+SEXP isAvailableFunc(SEXP funcname) {
+    
+    SEXP out = R_NilValue;
+    
+    const char *rfuncname = CHAR(STRING_ELT(funcname, 0));
+    
+    if (strcmp(rfuncname,"setRowNameCLP") == 0) {
+        out = Rf_ScalarLogical(1);
+    } else if (strcmp(rfuncname,"setColNameCLP") == 0) {
+        out = Rf_ScalarLogical(1);
+    } else if (strcmp(rfuncname,"writeMpsCLP") == 0) {
+        out = Rf_ScalarLogical(1);
+    } else if (strcmp(rfuncname,"modifyCoefficientCLP") == 0) {
+        out = Rf_ScalarLogical(1);
+    }
+    
+    return out;
+}
+
 #else /* not CLP_EXT1_17_2 */
 
+/* dummy function */
 SEXP setRowName(SEXP lp, SEXP i, SEXP rname) {
     SEXP out = R_NilValue;
     return out;
 }
 
+/* dummy function */
 SEXP setColName(SEXP lp, SEXP j, SEXP cname) {
     SEXP out = R_NilValue;
     return out;
 }
 
+/* dummy function */
 SEXP writeMps(SEXP lp, SEXP filename, SEXP formatType, SEXP numberAcross, SEXP objSense) {
+    SEXP out = Rf_ScalarInteger(1);
+    return out;
+}
+
+/* dummy function */
+SEXP modifyCoefficient(SEXP lp, SEXP row, SEXP column, SEXP newElement, SEXP keepZero) {
     SEXP out = R_NilValue;
     return out;
 }
 
-SEXP modifyCoefficient(SEXP lp, SEXP row, SEXP column, SEXP newElement, SEXP keepZero) {
+/* check for functionality of new clp functions */
+SEXP isAvailableFunc(SEXP funcname) {
+    
     SEXP out = R_NilValue;
+    
+    const char *rfuncname = CHAR(STRING_ELT(funcname, 0));
+    
+    if (strcmp(rfuncname,"setRowNameCLP") == 0) {
+        out = Rf_ScalarLogical(0);
+    } else if (strcmp(rfuncname,"setColNameCLP") == 0) {
+        out = Rf_ScalarLogical(0);
+    } else if (strcmp(rfuncname,"writeMpsCLP") == 0) {
+        out = Rf_ScalarLogical(0);
+    } else if (strcmp(rfuncname,"modifyCoefficientCLP") == 0) {
+        out = Rf_ScalarLogical(0);
+    }
+    
     return out;
 }
 

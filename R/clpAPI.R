@@ -936,7 +936,7 @@ writeMPSCLP <- function(lp, fname, formatType = 0, numberAcross = 1, objSense = 
                    as.integer(formatType),
                    as.integer(numberAcross),
                    as.numeric(objSense)
-    )
+             )
         
     return(check)
 
@@ -960,3 +960,14 @@ modifyCoefficientCLP <- function(lp, i, j, el, keepZero = TRUE) {
 
 }
 
+
+# Function to check availability of Clp-1.17.2 functions #
+#------------------------------------------------------------------------------#
+
+isAvailableFuncCLP <- function(funcname) {
+    check <- .Call("isAvailableFunc", PACKAGE = "clpAPI",
+                   as.character(funcname)
+             )
+    
+    return(check)
+}

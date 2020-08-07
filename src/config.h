@@ -41,7 +41,7 @@
 #define PACKAGE_NAME "clpAPI"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "clpAPI 1.2.10"
+#define PACKAGE_STRING "clpAPI 1.2.13"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "clpapi"
@@ -50,7 +50,7 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "1.2.10"
+#define PACKAGE_VERSION "1.2.13"
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1

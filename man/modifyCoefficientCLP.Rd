@@ -23,10 +23,10 @@
     problem object.
   }
   \item{i}{
-    Row index.
+    Row index (starts with 0).
   }
   \item{j}{
-    Column index.
+    Column index (starts with 0).
   }
   \item{el}{
     Coefficient to set.

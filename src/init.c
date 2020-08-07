@@ -101,6 +101,7 @@ static const R_CallMethodDef callMethods[] = {
     {"setColName",                 (DL_FUNC) &setColName,                 3},
     {"writeMps",                   (DL_FUNC) &writeMps,                   5},
     {"modifyCoefficient",          (DL_FUNC) &modifyCoefficient,          5},
+    {"isAvailableFunc",            (DL_FUNC) &isAvailableFunc,            1},
     
     {NULL, NULL, 0}
 };
