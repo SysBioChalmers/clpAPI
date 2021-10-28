@@ -1,4 +1,4 @@
-AC_INIT([clpAPI], [1.3.0], [mayo.roettger@hhu.de])
+AC_INIT([clpAPI],[1.3.1],[mayo.roettger@hhu.de])
 
 dnl # --------------------------------------------------------------------
 dnl # template config.h.in
@@ -56,16 +56,14 @@ dnl # get arguments
 dnl # --------------------------------------------------------------------
 
 AC_ARG_WITH(clp-include,
-            AC_HELP_STRING([--with-clp-include=PATH],
-                           [location of COIN-OR Clp include directory [[/usr/local/include]]]
-                          ),
+            AS_HELP_STRING([--with-clp-include=PATH],[location of COIN-OR Clp include directory [[/usr/local/include]]
+                          ]),
             [CLP_INCLUDE=$withval],
             [CLP_INCLUDE=""])
 
 AC_ARG_WITH(clp-lib,
-            AC_HELP_STRING([--with-clp-lib=PATH],
-                           [location of COIN-OR Clp callable library [[usr/local/lib]]]
-                          ),
+            AS_HELP_STRING([--with-clp-lib=PATH],[location of COIN-OR Clp callable library [[usr/local/lib]]
+                          ]),
             [CLP_LIB=$withval],
             [CLP_LIB=""])
 
@@ -284,6 +282,7 @@ dnl # --------------------------------------------------------------------
 AC_SUBST(PKG_CFLAGS)
 AC_SUBST(PKG_LIBS)
 AC_SUBST(PKG_CPPFLAGS)
-AC_OUTPUT(src/Makevars)
+AC_CONFIG_FILES([src/Makevars])
+AC_OUTPUT
 
 exit 0

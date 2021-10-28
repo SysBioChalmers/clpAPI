@@ -4,6 +4,13 @@
 \title{clpAPI News}
 \encoding{UTF-8}
 % ---------------------------------------------------------------------------- %
+\section{Changes in version 1.3.1 2021-10-28}{
+  \itemize{
+    \item Fix for CRAN issue concerning deprecated autoconf macros.
+  }
+}
+
+% ---------------------------------------------------------------------------- %
 \section{Changes in version 1.3.0 2020-08-07}{
   \itemize{
     \item Added function \code{isAvailableFuncCLP}, to check if newer API 

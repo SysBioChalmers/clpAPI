@@ -268,7 +268,7 @@ SEXP getMaximumSeconds(SEXP lp) {
 }
 
 /* -------------------------------------------------------------------------- */
-/* get if maximum iteration bound was hit*/
+/* get if maximum iteration (or time) bound was hit*/
 SEXP getHitMaximumIterations(SEXP lp) {
 
     SEXP out = R_NilValue;
