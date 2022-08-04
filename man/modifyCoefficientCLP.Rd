@@ -9,7 +9,9 @@
 \description{
   Low level interface function to the COIN-OR Clp function
   \code{Clp_modifyCoefficient}. Consult the COIN-OR Clp
-  documentation for more detailed information.
+  documentation for more detailed information. This function is 
+  only available in newer COIN-OR Clp versions and/or specific 
+  builds. See \code{isAvailableFuncCLP()} to check for availability.
 }
 
 \usage{
@@ -47,7 +49,7 @@
 
 \references{
    The COIN-OR Clp home page at
-   \url{https://projects.coin-or.org/Clp}
+   \url{https://github.com/coin-or/Clp}
 }
 
 \author{

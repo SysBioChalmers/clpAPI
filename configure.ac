@@ -1,4 +1,4 @@
-AC_INIT([clpAPI],[1.3.1],[mayo.roettger@hhu.de])
+AC_INIT([clpAPI],[1.3.2],[mayo.roettger@hhu.de])
 
 dnl # --------------------------------------------------------------------
 dnl # template config.h.in
@@ -261,12 +261,16 @@ AC_SEARCH_LIBS([Clp_newModel], [Clp], ,
 
 
 dnl # --------------------------------------------------------------------
-dnl # check for new functions in Clp-1.17.2
+dnl # check for newer functions
 dnl # --------------------------------------------------------------------
 
-AC_SEARCH_LIBS([Clp_setRowName], [Clp], AC_DEFINE([HAVE_CLP_EXT1_17_2], [1], [defined, if extended functions are available]), AC_MSG_NOTICE([Clp extensions 1.17.2 not available]), )
+AC_SEARCH_LIBS([Clp_setRowName], [Clp], AC_DEFINE([HAVE_CLP_SETROWNAME], [1], [defined, if function is available]), AC_MSG_NOTICE([Clp function Clp_setRowName not available]), )
 
+AC_SEARCH_LIBS([Clp_setColName], [Clp], AC_DEFINE([HAVE_CLP_SETCOLNAME], [1], [defined, if function is available]), AC_MSG_NOTICE([Clp function Clp_setColName not available]), )
 
+AC_SEARCH_LIBS([Clp_writeMps], [Clp], AC_DEFINE([HAVE_CLP_WRITEMPS], [1], [defined, if function is available]), AC_MSG_NOTICE([Clp function Clp_writeMPS not available]), )
+
+AC_SEARCH_LIBS([Clp_modifyCoefficient], [Clp], AC_DEFINE([HAVE_CLP_MODIFYCOEFFICIENT], [1], [defined, if function is available]), AC_MSG_NOTICE([Clp function Clp_modifyCoefficient not available]), )
 
 dnl # --------------------------------------------------------------------
 dnl # We have a config.h

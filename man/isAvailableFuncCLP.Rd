@@ -2,12 +2,12 @@
 \alias{isAvailableFuncCLP}
 
 \title{
-  Check if some newer functions relying on CLP version >= 1.17.2 are available
+  Check if some newer functions relying on newer CLP versions are available
 }
 
 \description{
-  Checks if functions like \code{setRowNameCLP}, \code{setColNameCLP}, 
-  \code{writeMpsCLP}, and \code{modifyCoefficientCLP} are available.
+  Checks if functions \code{setRowNameCLP}, \code{setColNameCLP}, 
+  \code{writeMPSCLP}, and \code{modifyCoefficientCLP} are available.
 }
 
 \usage{
@@ -22,15 +22,15 @@
 
 \details{
   Some functions of the API require that the package was build against
-  CLP version >= 1.17.2, otherwise they will be dummy functions. 
-  These functions are \code{setRowNameCLP}, \code{setColNameCLP}, 
+  newer CLP versions with partly optional builds, otherwise they will be 
+  dummy functions. These functions are \code{setRowNameCLP}, \code{setColNameCLP}, 
   \code{writeMpsCLP}, and \code{modifyCoefficientCLP}. This function 
-  tests, if these functions are available.
+  tests, if the respective function is available.
 }
 
 \value{
   TRUE, if the respective function is available, 
-  returns FALSE, if it is not. If the funcname
+  FALSE, if it is not. If the funcname
   does not match one of the mentioned functions, it
   returns FALSE.
 }

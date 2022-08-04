@@ -39,7 +39,7 @@ chgRowUpperCLP(lp, rub)
 
 \references{
    The COIN-OR Clp home page at
-   \url{https://projects.coin-or.org/Clp}
+   \url{https://github.com/coin-or/Clp}
 }
 
 \author{

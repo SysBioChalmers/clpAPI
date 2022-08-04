@@ -4,6 +4,19 @@
 \title{clpAPI News}
 \encoding{UTF-8}
 % ---------------------------------------------------------------------------- %
+\section{Changes in version 1.3.2 2022-08-04}{
+  \itemize{
+    \item Corrected configure script to check for newer functions \code{setRowNameCLP}, 
+    \code{setColNameCLP}, \code{writeMPSCLP} and \code{modifyCoefficientCLP} 
+    individually, rather than checking only for COIN-OR Clp version >= 1.17.2, according
+    to CRAN issue, where optional features in Clp 1.17.6 were assumed present.
+    \item Corrected invalid URLs.
+    \item Maintainer change.
+    \item Project changed from GitLab to GitHub \url{https://github.com/SysBioChalmers/sybil-clpAPI}.
+  }
+}
+
+% ---------------------------------------------------------------------------- %
 \section{Changes in version 1.3.1 2021-10-28}{
   \itemize{
     \item Fix for CRAN issue concerning deprecated autoconf macros.

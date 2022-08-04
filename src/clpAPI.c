@@ -1302,9 +1302,8 @@ SEXP probName(SEXP lp, SEXP nc, SEXP pname) {
 
 
 
-#ifdef HAVE_CLP_EXT1_17_2
+#ifdef HAVE_CLP_SETROWNAME
 
-/* NEW in Clp-1.17.2 */
 /* -------------------------------------------------------------------------- */
 /* fill in row name */
 SEXP setRowName(SEXP lp, SEXP i, SEXP rname) {
@@ -1320,8 +1319,20 @@ SEXP setRowName(SEXP lp, SEXP i, SEXP rname) {
     return out;
 }
 
+#else /* HAVE_CLP_SETROWNAME */
 
-/* NEW in Clp-1.17.2 */
+/* dummy function */
+SEXP setRowName(SEXP lp, SEXP i, SEXP rname) {
+    SEXP out = R_NilValue;
+    return out;
+}
+
+#endif /* HAVE_CLP_SETROWNAME */
+
+
+
+#ifdef HAVE_CLP_SETCOLNAME
+
 /* -------------------------------------------------------------------------- */
 /* fill in column name */
 SEXP setColName(SEXP lp, SEXP j, SEXP cname) {
@@ -1337,8 +1348,20 @@ SEXP setColName(SEXP lp, SEXP j, SEXP cname) {
     return out;
 }
 
+#else /* HAVE_CLP_SETCOLNAME */
 
-/* NEW in Clp-1.17.2 */
+/* dummy function */
+SEXP setColName(SEXP lp, SEXP j, SEXP cname) {
+    SEXP out = R_NilValue;
+    return out;
+}
+
+#endif /* HAVE_CLP_SETCOLNAME */
+
+
+
+#ifdef HAVE_CLP_WRITEMPS
+
 /* -------------------------------------------------------------------------- */
 /* Write an mps file to the given filename */
 SEXP writeMps(SEXP lp, SEXP filename, SEXP formatType, SEXP numberAcross, SEXP objSense) {
@@ -1354,8 +1377,20 @@ SEXP writeMps(SEXP lp, SEXP filename, SEXP formatType, SEXP numberAcross, SEXP o
     return Rf_ScalarInteger(check);
 }
 
+#else /* HAVE_CLP_WRITEMPS */
 
-/* NEW in Clp-1.17.2 */
+/* dummy function */
+SEXP writeMps(SEXP lp, SEXP filename, SEXP formatType, SEXP numberAcross, SEXP objSense) {
+    SEXP out = Rf_ScalarInteger(1);
+    return out;
+}
+
+#endif /* HAVE_CLP_WRITEMPS */
+
+
+
+#ifdef HAVE_CLP_MODIFYCOEFFICIENT
+
 /* -------------------------------------------------------------------------- */
 /* Change matrix coefficients */
 SEXP modifyCoefficient(SEXP lp, SEXP row, SEXP column, SEXP newElement, SEXP keepZero) {
@@ -1371,6 +1406,18 @@ SEXP modifyCoefficient(SEXP lp, SEXP row, SEXP column, SEXP newElement, SEXP kee
     return out;
 }
 
+#else /* HAVE_CLP_MODIFYCOEFFICIENT */
+
+/* dummy function */
+SEXP modifyCoefficient(SEXP lp, SEXP row, SEXP column, SEXP newElement, SEXP keepZero) {
+    SEXP out = R_NilValue;
+    return out;
+}
+
+#endif /* HAVE_CLP_MODIFYCOEFFICIENT */
+
+
+
 /* -------------------------------------------------------------------------- */
 /* check for functionality of new clp functions */
 SEXP isAvailableFunc(SEXP funcname) {
@@ -1380,62 +1427,30 @@ SEXP isAvailableFunc(SEXP funcname) {
     const char *rfuncname = CHAR(STRING_ELT(funcname, 0));
     
     if (strcmp(rfuncname,"setRowNameCLP") == 0) {
+#ifdef HAVE_CLP_SETROWNAME
         out = Rf_ScalarLogical(1);
+#else /* HAVE_CLP_SETROWNAME */
+        out = Rf_ScalarLogical(0);
+#endif /* HAVE_CLP_SETROWNAME */
     } else if (strcmp(rfuncname,"setColNameCLP") == 0) {
+#ifdef HAVE_CLP_SETCOLNAME
         out = Rf_ScalarLogical(1);
+#else /* HAVE_CLP_SETCOLNAME */
+        out = Rf_ScalarLogical(0);
+#endif /* HAVE_CLP_SETCOLNAME */
     } else if (strcmp(rfuncname,"writeMpsCLP") == 0) {
+#ifdef HAVE_CLP_WRITEMPS
         out = Rf_ScalarLogical(1);
+#else /* HAVE_CLP_WRITEMPS */
+        out = Rf_ScalarLogical(0);
+#endif /* HAVE_CLP_WRITEMPS */
     } else if (strcmp(rfuncname,"modifyCoefficientCLP") == 0) {
+#ifdef HAVE_CLP_MODIFYCOEFFICIENT
         out = Rf_ScalarLogical(1);
+#else HAVE_CLP_MODIFYCOEFFICIENT
+        out = Rf_ScalarLogical(0);
+#endif HAVE_CLP_MODIFYCOEFFICIENT
     }
     
     return out;
 }
-
-#else /* not CLP_EXT1_17_2 */
-
-/* dummy function */
-SEXP setRowName(SEXP lp, SEXP i, SEXP rname) {
-    SEXP out = R_NilValue;
-    return out;
-}
-
-/* dummy function */
-SEXP setColName(SEXP lp, SEXP j, SEXP cname) {
-    SEXP out = R_NilValue;
-    return out;
-}
-
-/* dummy function */
-SEXP writeMps(SEXP lp, SEXP filename, SEXP formatType, SEXP numberAcross, SEXP objSense) {
-    SEXP out = Rf_ScalarInteger(1);
-    return out;
-}
-
-/* dummy function */
-SEXP modifyCoefficient(SEXP lp, SEXP row, SEXP column, SEXP newElement, SEXP keepZero) {
-    SEXP out = R_NilValue;
-    return out;
-}
-
-/* check for functionality of new clp functions */
-SEXP isAvailableFunc(SEXP funcname) {
-    
-    SEXP out = R_NilValue;
-    
-    const char *rfuncname = CHAR(STRING_ELT(funcname, 0));
-    
-    if (strcmp(rfuncname,"setRowNameCLP") == 0) {
-        out = Rf_ScalarLogical(0);
-    } else if (strcmp(rfuncname,"setColNameCLP") == 0) {
-        out = Rf_ScalarLogical(0);
-    } else if (strcmp(rfuncname,"writeMpsCLP") == 0) {
-        out = Rf_ScalarLogical(0);
-    } else if (strcmp(rfuncname,"modifyCoefficientCLP") == 0) {
-        out = Rf_ScalarLogical(0);
-    }
-    
-    return out;
-}
-
-#endif /* HAVE_CLP_EXT1_17_2 */
