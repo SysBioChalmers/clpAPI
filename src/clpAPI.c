@@ -1447,9 +1447,9 @@ SEXP isAvailableFunc(SEXP funcname) {
     } else if (strcmp(rfuncname,"modifyCoefficientCLP") == 0) {
 #ifdef HAVE_CLP_MODIFYCOEFFICIENT
         out = Rf_ScalarLogical(1);
-#else HAVE_CLP_MODIFYCOEFFICIENT
+#else /* HAVE_CLP_MODIFYCOEFFICIENT */
         out = Rf_ScalarLogical(0);
-#endif HAVE_CLP_MODIFYCOEFFICIENT
+#endif /* HAVE_CLP_MODIFYCOEFFICIENT */
     }
     
     return out;
