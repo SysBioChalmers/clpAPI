@@ -32,7 +32,7 @@
   TRUE, if the respective function is available, 
   FALSE, if it is not. If the funcname
   does not match one of the mentioned functions, it
-  returns FALSE.
+  returns NULL.
 }
 
 \author{
