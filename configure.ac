@@ -246,18 +246,20 @@ AC_CHECK_HEADERS([stdbool.h],,
     AC_MSG_ERROR([Could not find stdbool.h]))
 
 AC_CHECK_HEADER([Clp_C_Interface.h],,
-    AC_MSG_ERROR([Could not find Clp_C_Interface.h:
-      clpAPI requires clp from http://www.coin-or.org/projects/Clp.xml
-      use --with-clp-include or CLP_INCLUDE to specify the include path.]),
+    AC_MSG_ERROR([Could not find Clp_C_Interface.h or it could not be compiled:
+      clpAPI requires CoinUtils from https://github.com/coin-or/CoinUtils and
+      Clp from https://github.com/coin-or/Clp.
+      use --with-clp-include or CLP_INCLUDE to specify the include path 
+      and make sure to include necessary Clp and CoinUtils headers paths.]),
       [#ifdef HAVE_STDBOOL_H
       # include <stdbool.h>
       #endif
       ])
 
 AC_SEARCH_LIBS([Clp_newModel], [Clp], ,
-    AC_MSG_ERROR([Could not link to clp:
-      use --with-clp-lib or CLP_LIB to specify the lib path.]))
-
+    AC_MSG_ERROR([Could not link to Clp:
+      use --with-clp-lib or CLP_LIB to specify the lib path and make 
+      sure to include necessary CoinUtils and Clp libraries.]))
 
 
 dnl # --------------------------------------------------------------------

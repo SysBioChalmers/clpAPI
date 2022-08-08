@@ -3601,9 +3601,11 @@ ac_fn_c_check_header_compile "$LINENO" "Clp_C_Interface.h" "ac_cv_header_Clp_C_I
 if test "x$ac_cv_header_Clp_C_Interface_h" = xyes; then :
 
 else
-  as_fn_error $? "Could not find Clp_C_Interface.h:
-      clpAPI requires clp from http://www.coin-or.org/projects/Clp.xml
-      use --with-clp-include or CLP_INCLUDE to specify the include path." "$LINENO" 5
+  as_fn_error $? "Could not find Clp_C_Interface.h or it could not be compiled:
+      clpAPI requires CoinUtils from https://github.com/coin-or/CoinUtils and
+      Clp from https://github.com/coin-or/Clp.
+      use --with-clp-include or CLP_INCLUDE to specify the include path
+      and make sure to include necessary Clp and CoinUtils headers paths." "$LINENO" 5
 fi
 
 
@@ -3663,10 +3665,10 @@ if test "$ac_res" != no; then :
   test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
 
 else
-  as_fn_error $? "Could not link to clp:
-      use --with-clp-lib or CLP_LIB to specify the lib path." "$LINENO" 5
+  as_fn_error $? "Could not link to Clp:
+      use --with-clp-lib or CLP_LIB to specify the lib path and make
+      sure to include necessary CoinUtils and Clp libraries." "$LINENO" 5
 fi
-
 
 
 
