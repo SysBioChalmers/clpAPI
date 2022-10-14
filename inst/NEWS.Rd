@@ -12,8 +12,8 @@
     to CRAN issue, where optional features in Clp were assumed present.
     \item Adapted Makevars.win to build with Clp version 1.17.7.
     \item Corrected invalid URLs.
-    \item Maintainer change.
-    \item Project changed from GitLab to GitHub \url{https://github.com/SysBioChalmers/sybil-clpAPI}.
+    %\item Maintainer change.
+    \item Project changed from GitLab to GitHub \url{https://github.com/SysBioChalmers/clpAPI}.
   }
 }
 
