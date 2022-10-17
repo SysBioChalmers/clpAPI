@@ -217,7 +217,7 @@ SEXP saveModel(SEXP lp, SEXP fname);
 SEXP restoreModel(SEXP lp, SEXP fname);
 
 /* get COIN OR Clp version */
-SEXP version();
+SEXP version(void);
 
 /* drop names */
 SEXP dropNames(SEXP lp);

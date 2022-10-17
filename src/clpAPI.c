@@ -1175,7 +1175,7 @@ SEXP restoreModel(SEXP lp, SEXP fname) {
 
 /* -------------------------------------------------------------------------- */
 /* get COIN OR Clp version */
-SEXP version() {
+SEXP version(void) {
 
     SEXP out = R_NilValue;
     
