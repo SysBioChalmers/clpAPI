@@ -4,15 +4,16 @@
 \title{clpAPI News}
 \encoding{UTF-8}
 % ---------------------------------------------------------------------------- %
-\section{Changes in version 1.3.2 2022-08-05}{
+\section{Changes in version 1.3.2 2022-10-17}{
   \itemize{
+    \item Corrected CRAN issue with function declaration in clpAPI.c and clpAPI.h.
     \item Corrected configure script to check for newer functions \code{setRowNameCLP}, 
     \code{setColNameCLP}, \code{writeMPSCLP} and \code{modifyCoefficientCLP} 
     individually, rather than checking only for COIN-OR Clp version >= 1.17.2, according
     to CRAN issue, where optional features in Clp were assumed present.
     \item Adapted Makevars.win to build with Clp version 1.17.7.
     \item Corrected invalid URLs.
-    %\item Maintainer change.
+    \item Maintainer change.
     \item Project changed from GitLab to GitHub \url{https://github.com/SysBioChalmers/clpAPI}.
   }
 }
